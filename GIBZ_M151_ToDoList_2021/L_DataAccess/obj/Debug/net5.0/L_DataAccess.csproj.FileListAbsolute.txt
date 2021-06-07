@@ -1,0 +1,5 @@
+C:\GIBZ\M151\Projekt\GIBZ_M151_MJ\GIBZ_M151_ToDoList_2021\L_DataAccess\bin\Debug\net5.0\BusinessObject.dll
+C:\GIBZ\M151\Projekt\GIBZ_M151_MJ\GIBZ_M151_ToDoList_2021\L_DataAccess\obj\Debug\net5.0\L_DataAccess.csprojAssemblyReference.cache
+C:\GIBZ\M151\Projekt\GIBZ_M151_MJ\GIBZ_M151_ToDoList_2021\L_DataAccess\obj\Debug\net5.0\L_DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\GIBZ\M151\Projekt\GIBZ_M151_MJ\GIBZ_M151_ToDoList_2021\L_DataAccess\obj\Debug\net5.0\L_DataAccess.AssemblyInfoInputs.cache
+C:\GIBZ\M151\Projekt\GIBZ_M151_MJ\GIBZ_M151_ToDoList_2021\L_DataAccess\obj\Debug\net5.0\L_DataAccess.AssemblyInfo.cs
