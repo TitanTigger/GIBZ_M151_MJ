@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L_DataAccess.Entities
 {
-    public class User
+    public class UserDA
     {
     }
 }

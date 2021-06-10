@@ -14,4 +14,8 @@
     <ProjectReference Include="..\L_DataAccess\L_DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\User\" />
+  </ItemGroup>
+
 </Project>
