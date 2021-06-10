@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L_DataAccess.Entities
 {
-    public class Role
+    public class ListDA
     {
         public int Id { get; set; }
         public string Name { get; set; }

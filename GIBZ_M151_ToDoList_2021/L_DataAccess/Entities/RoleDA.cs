@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace L_DataAccess.Entities
 {
-    public class Status
+    public class RoleDA
     {
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 }

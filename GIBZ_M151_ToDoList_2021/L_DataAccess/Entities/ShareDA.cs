@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace L_DataAccess.Entities
 {
-    public class List
+    public class ShareDA
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int UserId { get; set; }
+        public int ListId { get; set; }
+        public int RoleId { get; set; }
+        
     }
 }

@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\L_DataAccess\L_DataAccess.csproj" />
+    <Compile Remove="Services\Models\**" />
+    <EmbeddedResource Remove="Services\Models\**" />
+    <None Remove="Services\Models\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Models\" />
+    <ProjectReference Include="..\L_DataAccess\L_DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

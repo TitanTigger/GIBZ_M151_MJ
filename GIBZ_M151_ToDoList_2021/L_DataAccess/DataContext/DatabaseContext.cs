@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task = L_DataAccess.Entities.Task;
 
 namespace L_DataAccess.DataContext
 {
@@ -42,12 +41,12 @@ namespace L_DataAccess.DataContext
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         //Our DbSets [Entities].
-        public DbSet<List> Lists { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<Share> Shares { get; set; }
-        public DbSet<Status> Status { get; set; }
-        public DbSet<Task> Tasks { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<ListDA> Lists { get; set; }
+        public DbSet<RoleDA> Roles { get; set; }
+        public DbSet<ShareDA> Shares { get; set; }
+        public DbSet<StatusDA> Status { get; set; }
+        public DbSet<TaskDA> Tasks { get; set; }
+        public DbSet<UserDA> Users { get; set; }
 
 
 

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace L_DataAccess.Entities
 {
-    public class Share
+    public class StatusDA
     {
-        
+        public int Id { get; set; }
+        public string name { get; set; }
     }
 }

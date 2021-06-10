@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GIBZ\\M151\\Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {}
+    "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\GIBZ\\M151\\Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {
+    "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
+        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
         "projectName": "L_DataAccess",
-        "projectPath": "C:\\GIBZ\\M151\\Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
-        "packagesPath": "C:\\Users\\lippj\\.nuget\\packages\\",
-        "outputPath": "C:\\GIBZ\\M151\\Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\obj\\",
+        "projectPath": "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
+        "outputPath": "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lippj\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
