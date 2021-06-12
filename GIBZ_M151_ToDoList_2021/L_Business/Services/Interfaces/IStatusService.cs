@@ -14,6 +14,7 @@ namespace L_Business.Services.Interfaces
         Task<Generic_ResultSet<Status_ResultSet>> GetStatusById(int id);
         Task<Generic_ResultSet<Status_ResultSet>> UpdateStatus(int id, string name);
         Task<Generic_ResultSet<Status_ResultSet>> DeleteStatus(int id);
+        Task<Generic_ResultSet<List<Status_ResultSet>>> GetAllStatus();
 
     }
 }

@@ -13,6 +13,6 @@ namespace L_DataAccess.Entities
         public string Description { get; set; }
         public int ListId { get; set; }
         public int StatusId { get; set;}
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

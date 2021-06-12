@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {}
+    "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {
+    "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
+        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
         "projectName": "L_DataAccess",
-        "projectPath": "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
+        "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
         "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
-        "outputPath": "C:\\GIBZ\\M151\\Projekt-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\obj\\",
+        "outputPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.6, )"

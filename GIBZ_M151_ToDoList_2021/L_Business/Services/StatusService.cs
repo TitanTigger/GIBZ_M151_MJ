@@ -74,6 +74,40 @@ namespace L_Business.Services
             return result;
         }
 
+        public async Task<Generic_ResultSet<List<Status_ResultSet>>> GetAllStatus()
+        {           
+            Generic_ResultSet<List<Status_ResultSet>> result = new Generic_ResultSet<List<Status_ResultSet>>();
+            try
+            {
+                //GET Status FROM DB
+                List<StatusDA> Status = await _crud.ReadAll<StatusDA>();
+
+                Status.ForEach(app => {
+                    result.result_set.Add(new Status_ResultSet
+                    {
+                        Id = app.Id,
+                        Name = app.Name                        
+                    });
+                });
+
+                //SET SUCCESSFUL RESULT VALUES
+                result.userMessage = string.Format("Status {0} was found successfully");
+                result.internalMessage = "LOGIC.Services.StatusService: GetStatusById() method executed successfully.";
+                result.result_set = result.result_set;
+                result.success = true;
+            }
+            catch (Exception exception)
+            {
+                //SET FAILED RESULT VALUES
+                result.exception = exception;
+                result.userMessage = "Failed to find Status.";
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: GetStatusById(): {0}", exception.Message);
+                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
+            }
+            return result;
+            
+        }
+
         public async Task<Generic_ResultSet<Status_ResultSet>> GetStatusById(int id)
         {
             Generic_ResultSet<Status_ResultSet> result = new Generic_ResultSet<Status_ResultSet>();

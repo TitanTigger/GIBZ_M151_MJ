@@ -18,4 +18,8 @@
     <Folder Include="Models\User\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.6" />
+  </ItemGroup>
+
 </Project>

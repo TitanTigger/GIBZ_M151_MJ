@@ -4,6 +4,7 @@ using L_Business.Services.Interfaces;
 using L_DataAccess.Entities;
 using L_DataAccess.Functions.Crud;
 using L_DataAccess.Functions.Interfaces;
+using L_DataAccess.Functions.Specific;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,9 @@ namespace L_Business.Services
     public class TaskService : ITaskService
     {
         private ICRUD _crud = new CRUD();
+        private ITaskOperations _taskOperations = new TaskOperations();
 
-        public async Task<Generic_ResultSet<Task_ResultSet>> AddTask(string title, string description, int listId, int statusId, int userId)
+        public async Task<Generic_ResultSet<Task_ResultSet>> AddTask(string title, string description, int listId, int statusId, string userId)
         {
             Generic_ResultSet<Task_ResultSet> result = new Generic_ResultSet<Task_ResultSet>();
             try
@@ -82,6 +84,25 @@ namespace L_Business.Services
             return result;
         }
 
+        public async Task<Generic_ResultSet<Task_ResultSet>> DeleteTasksByListId(int listId)
+        {
+            Generic_ResultSet<Task_ResultSet> result = new Generic_ResultSet<Task_ResultSet>();
+            try
+            {
+                await _taskOperations.DeleteTasksByListId(listId);
+                result.userMessage = string.Format("Task deleted successfully");
+                result.internalMessage = "LOGIC.Services.TaskService:  DeleteTask() method executed successfully.";
+                result.success = true;
+            }
+            catch (Exception exception)
+            {
+                result.exception = exception;
+                result.userMessage = "Failed to delete Task. Please try again.";
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.TaskService: DeleteTask(): {0}", exception.Message); ;
+            }
+            return result;
+        }
+
         public async Task<Generic_ResultSet<Task_ResultSet>> GetTaskById(int id)
         {
             Generic_ResultSet<Task_ResultSet> result = new Generic_ResultSet<Task_ResultSet>();
@@ -119,7 +140,46 @@ namespace L_Business.Services
             return result;
         }
 
-        public async Task<Generic_ResultSet<Task_ResultSet>> UpdateTask(int id, string title, string description, int listId, int statusId, int userId)
+        public async Task<Generic_ResultSet<List<Task_ResultSet>>> GetTasksByListId(int listId)
+        {
+            Generic_ResultSet<List<Task_ResultSet>> result = new Generic_ResultSet<List<Task_ResultSet>>();
+            result.result_set = new List<Task_ResultSet>();
+            try
+            {
+                //GET Applicant FROM DB
+                List<TaskDA> Tasks = await _taskOperations.GetTasksByListId(listId);
+
+                //MANUAL MAPPING OF RETURNED Task VALUES TO Task_ResultSet
+                Tasks.ForEach(app => {
+                    result.result_set.Add(new Task_ResultSet
+                    {
+                        Id = app.Id,
+                        Title = app.Title,
+                        Description = app.Description,
+                        ListId = app.ListId,
+                        StatusId = app.StatusId,
+                        UserId = app.UserId
+                    });
+                });
+
+                //SET SUCCESSFUL RESULT VALUES
+                result.userMessage = "Your tasks were located successfully";
+                result.internalMessage = "LOGIC.Services.Implementation.TasksService: GetTasksByListId() method executed successfully.";
+                result.result_set = result.result_set;
+                result.success = true;
+            }
+            catch (Exception exception)
+            {
+                //SET FAILED RESULT VALUES
+                result.exception = exception;
+                result.userMessage = "Failed to find the tasks you were looking for.";
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.Implementation.TaskService: GetTasksByListId(): {0}", exception.Message);
+                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
+            }
+            return result;
+        }
+
+        public async Task<Generic_ResultSet<Task_ResultSet>> UpdateTask(int id, string title, string description, int listId, int statusId, string userId)
         {
             Generic_ResultSet<Task_ResultSet> result = new Generic_ResultSet<Task_ResultSet>();
             try

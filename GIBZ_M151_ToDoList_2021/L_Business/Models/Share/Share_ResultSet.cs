@@ -9,7 +9,7 @@ namespace L_Business.Models.Share
     public class Share_ResultSet
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public int ListId { get; set; }
         public int RoleId { get; set; }
     }

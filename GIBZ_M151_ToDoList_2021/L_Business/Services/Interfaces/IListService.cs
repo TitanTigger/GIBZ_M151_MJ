@@ -10,10 +10,11 @@ namespace L_Business.Services.Interfaces
 {
     public interface IListService
     {
-        Task<Generic_ResultSet<List_ResultSet>> AddList(string name);
+        Task<Generic_ResultSet<List_ResultSet>> AddList(string name, string username);
         Task<Generic_ResultSet<List_ResultSet>> GetListById(int id);
         Task<Generic_ResultSet<List_ResultSet>> UpdateList(int id, string name);
         Task<Generic_ResultSet<List_ResultSet>> DeleteList(int id);
+        Task<Generic_ResultSet<List<List_ResultSet>>> GetListsByUserId(string userId);
 
     }
 }

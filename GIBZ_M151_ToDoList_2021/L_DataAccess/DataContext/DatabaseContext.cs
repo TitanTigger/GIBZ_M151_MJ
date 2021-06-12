@@ -1,4 +1,5 @@
 ﻿using L_DataAccess.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace L_DataAccess.DataContext
         public DbSet<ShareDA> Shares { get; set; }
         public DbSet<StatusDA> Status { get; set; }
         public DbSet<TaskDA> Tasks { get; set; }
-        public DbSet<UserDA> Users { get; set; }
+        public DbSet<IdentityUser> Users { get; set; }
 
 
 

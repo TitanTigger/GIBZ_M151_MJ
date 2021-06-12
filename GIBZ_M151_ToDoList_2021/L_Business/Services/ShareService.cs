@@ -4,6 +4,7 @@ using L_Business.Services.Interfaces;
 using L_DataAccess.Entities;
 using L_DataAccess.Functions.Crud;
 using L_DataAccess.Functions.Interfaces;
+using L_DataAccess.Functions.Specific;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,9 @@ namespace L_Business.Services
     public class ShareService : IShareService
     {
         private ICRUD _crud = new CRUD();
+        private IShareOperations _shareOperations = new ShareOperations();
 
-        public async Task<Generic_ResultSet<Share_ResultSet>> AddShare(int userId, int roleId, int listId)
+        public async Task<Generic_ResultSet<Share_ResultSet>> AddShare(string userId, int roleId, int listId)
         {
             Generic_ResultSet<Share_ResultSet> result = new Generic_ResultSet<Share_ResultSet>();
             try
@@ -78,6 +80,25 @@ namespace L_Business.Services
             return result;
         }
 
+        public async Task<Generic_ResultSet<Share_ResultSet>> DeleteSharesByListId(int listId)
+        {
+            Generic_ResultSet<Share_ResultSet> result = new Generic_ResultSet<Share_ResultSet>();
+            try
+            {
+                await _shareOperations.DeleteSharesByListId(listId);
+                result.userMessage = string.Format("Task deleted successfully");
+                result.internalMessage = "LOGIC.Services.TaskService:  DeleteTask() method executed successfully.";
+                result.success = true;
+            }
+            catch (Exception exception)
+            {
+                result.exception = exception;
+                result.userMessage = "Failed to delete Task. Please try again.";
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.TaskService: DeleteTask(): {0}", exception.Message); ;
+            }
+            return result;
+        }
+
         public async Task<Generic_ResultSet<Share_ResultSet>> GetShareById(int id)
         {
             Generic_ResultSet<Share_ResultSet> result = new Generic_ResultSet<Share_ResultSet>();
@@ -113,7 +134,81 @@ namespace L_Business.Services
             return result;
         }
 
-        public async Task<Generic_ResultSet<Share_ResultSet>> UpdateShare(int id, int userId, int roleId, int listId)
+        public async Task<Generic_ResultSet<List<Share_ResultSet>>> GetSharesByListId(int listId)
+        {
+            Generic_ResultSet<List<Share_ResultSet>> result = new Generic_ResultSet<List<Share_ResultSet>>();
+            result.result_set = new List<Share_ResultSet>();
+            try
+            {
+                //GET Applicant FROM DB
+                List<ShareDA> Shares = await _shareOperations.GetSharesByListId(listId);
+
+                //MANUAL MAPPING OF RETURNED Task VALUES TO Task_ResultSet
+                Shares.ForEach(app => {
+                    result.result_set.Add(new Share_ResultSet
+                    {
+                        Id = app.Id,
+                        RoleId = app.RoleId,
+                        ListId = app.ListId,
+                        UserId = app.UserId
+                    });
+                });
+
+                //SET SUCCESSFUL RESULT VALUES
+                result.userMessage = "Your shares were located successfully";
+                result.internalMessage = "LOGIC.Services.Implementation.ShareService: GetSharesByListId() method executed successfully.";
+                result.result_set = result.result_set;
+                result.success = true;
+            }
+            catch (Exception exception)
+            {
+                //SET FAILED RESULT VALUES
+                result.exception = exception;
+                result.userMessage = "Failed to find the shares you were looking for.";
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.Implementation.ShareService: GetSharesByUserId(): {0}", exception.Message);
+                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
+            }
+            return result;
+        }
+
+        public async Task<Generic_ResultSet<List<Share_ResultSet>>> GetSharesByUserId(string userId)
+        {
+            Generic_ResultSet<List<Share_ResultSet>> result = new Generic_ResultSet<List<Share_ResultSet>>();
+            result.result_set = new List<Share_ResultSet>();
+            try
+            {
+                //GET Applicant FROM DB
+                List<ShareDA> Shares = await _shareOperations.GetSharesByUserId(userId);
+
+                //MANUAL MAPPING OF RETURNED Task VALUES TO Task_ResultSet
+                Shares.ForEach(app => {
+                    result.result_set.Add(new Share_ResultSet
+                    {
+                        Id = app.Id,
+                        RoleId = app.RoleId,
+                        ListId = app.ListId,
+                        UserId = app.UserId
+                    });
+                });
+
+                //SET SUCCESSFUL RESULT VALUES
+                result.userMessage = "Your shares were located successfully";
+                result.internalMessage = "LOGIC.Services.Implementation.ShareService: GetSharesByUserId() method executed successfully.";
+                result.result_set = result.result_set;
+                result.success = true;
+            }
+            catch (Exception exception)
+            {
+                //SET FAILED RESULT VALUES
+                result.exception = exception;
+                result.userMessage = "Failed to find the shares you were looking for.";
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.Implementation.ShareService: GetSharesByUserId(): {0}", exception.Message);
+                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
+            }
+            return result;
+        }
+
+        public async Task<Generic_ResultSet<Share_ResultSet>> UpdateShare(int id, string userId, int roleId, int listId)
         {
             Generic_ResultSet<Share_ResultSet> result = new Generic_ResultSet<Share_ResultSet>();
             try
