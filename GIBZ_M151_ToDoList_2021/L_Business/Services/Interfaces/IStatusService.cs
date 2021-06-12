@@ -11,7 +11,7 @@ namespace L_Business.Services.Interfaces
     public interface IStatusService
     {
         Task<Generic_ResultSet<Status_ResultSet>> AddStatus(string name);
-        Task<Generic_ResultSet<Status_ResultSet>> GetStatusBy(int id);
+        Task<Generic_ResultSet<Status_ResultSet>> GetStatusById(int id);
         Task<Generic_ResultSet<Status_ResultSet>> UpdateStatus(int id, string name);
         Task<Generic_ResultSet<Status_ResultSet>> DeleteStatus(int id);
 

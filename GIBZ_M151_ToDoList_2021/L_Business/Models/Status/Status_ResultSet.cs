@@ -9,6 +9,6 @@ namespace L_Business.Models.Status
     public class Status_ResultSet
     {
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 }
