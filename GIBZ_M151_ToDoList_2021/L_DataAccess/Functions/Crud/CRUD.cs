@@ -11,7 +11,6 @@ namespace L_DataAccess.Functions.Crud
 {
     /// <summary>
     /// Generic based CRUD methods, Create, Read, Update, Delete methods.
-    /// <para>In region: BASIC EXAMPLE WITHOUT - DI : you will find a very basic set of examples</para>
     /// </summary>
     public class CRUD : ICRUD
     {
@@ -45,7 +44,7 @@ namespace L_DataAccess.Functions.Crud
         /// <typeparam name="T"></typeparam>
         /// <param name="entityId"></param>
         /// <returns></returns>
-        public async Task<T> Read<T>(Int64 entityId) where T : class
+        public async Task<T> Read<T>(int entityId) where T : class
         {
             try
             {
@@ -55,9 +54,9 @@ namespace L_DataAccess.Functions.Crud
                     return result;
                 }
             }
-            catch
+            catch(Exception e)
             {
-                throw;
+                throw new Exception("Error: ", e);
             }
         }
 
@@ -89,7 +88,7 @@ namespace L_DataAccess.Functions.Crud
         /// <param name="objectToUpdate"></param>
         /// <param name="entityId"></param>
         /// <returns></returns>
-        public async Task<T> Update<T>(T objectToUpdate, Int64 entityId) where T : class
+        public async Task<T> Update<T>(T objectToUpdate, int entityId) where T : class
         {
             try
             {
@@ -116,7 +115,7 @@ namespace L_DataAccess.Functions.Crud
         /// <typeparam name="T"></typeparam>
         /// <param name="entityId"></param>
         /// <returns></returns>
-        public async Task<bool> Delete<T>(Int64 entityId) where T : class
+        public async Task<bool> Delete<T>(int entityId) where T : class
         {
             try
             {
