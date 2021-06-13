@@ -11,5 +11,6 @@ namespace L_DataAccess.Functions.Interfaces
     {
         Task<List<TaskDA>> GetTasksByListId(int listId);
         Task<bool> DeleteTasksByListId(int listId);
+        Task<TaskDA> ChangeStatus(TaskDA task);
     }
 }

@@ -12,13 +12,32 @@ namespace L_DataAccess.Functions.Specific
 {
     public class TaskOperations : ITaskOperations
     {
+        // Update status of task
+        public async Task<TaskDA> ChangeStatus(TaskDA task)
+        {
+            try
+            {
+                using (var context = new DatabaseContext(DatabaseContext.Options.DatabaseOptions))
+                {
+                    context.Task.Update(task);
+                    await context.SaveChangesAsync();
+                    return task;
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        // Delete all tasks from one list
         public async Task<bool> DeleteTasksByListId(int listId)
         {            
             try
             {
                 using (var context = new DatabaseContext(DatabaseContext.Options.DatabaseOptions))
                 {
-                    context.Tasks.RemoveRange(context.Tasks.Where(t => t.ListId == listId));
+                    context.Task.RemoveRange(context.Task.Where(t => t.ListId == listId));
                     await context.SaveChangesAsync();
                     return true;
                 }
@@ -30,13 +49,14 @@ namespace L_DataAccess.Functions.Specific
             
         }
 
+        // Get all tasks from list
         public async Task<List<TaskDA>> GetTasksByListId(int listId)
         {
             try
             {
                 using (var context = new DatabaseContext(DatabaseContext.Options.DatabaseOptions))
                 {
-                    List<TaskDA> Tasks = await context.Tasks.Where(t => t.ListId == listId).ToListAsync();
+                    List<TaskDA> Tasks = await context.Task.Where(t => t.ListId == listId).ToListAsync();
 
                     return Tasks;
                 }

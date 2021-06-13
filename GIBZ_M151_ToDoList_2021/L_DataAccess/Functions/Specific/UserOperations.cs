@@ -12,6 +12,7 @@ namespace L_DataAccess.Functions.Specific
 {
     public class UserOperations : IUserOperations
     {
+        // Get user by id
         public async Task<IdentityUser> GetUserById(string id)
         {
             try
@@ -28,6 +29,7 @@ namespace L_DataAccess.Functions.Specific
             }
         }
 
+        // Get user by username
         public async Task<IdentityUser> GetUserByUsername(string username)
         {
             try

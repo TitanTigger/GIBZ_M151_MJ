@@ -12,13 +12,14 @@ namespace L_DataAccess.Functions.Specific
 {
     public class ShareOperations : IShareOperations
     {
+        // Delete all Share Entries from one list
         public async Task<bool> DeleteSharesByListId(int listId)
         {
             try
             {
                 using (var context = new DatabaseContext(DatabaseContext.Options.DatabaseOptions))
                 {
-                    context.Shares.RemoveRange(context.Shares.Where(s => s.ListId == listId));
+                    context.Share.RemoveRange(context.Share.Where(s => s.ListId == listId));
                     await context.SaveChangesAsync();
                     return true;
                 }
@@ -29,14 +30,14 @@ namespace L_DataAccess.Functions.Specific
             }
         }
 
+        // Get all Share Entries from one List
         public async Task<List<ShareDA>> GetSharesByListId(int listId)
         {
             try
             {
                 using (var context = new DatabaseContext(DatabaseContext.Options.DatabaseOptions))
                 {
-                    List<ShareDA> Shares = await context.Shares.Where(s => s.ListId == listId).ToListAsync();
-                    await context.SaveChangesAsync();
+                    List<ShareDA> Shares = await context.Share.Where(s => s.ListId == listId).ToListAsync();
                     return Shares;
                 }
             }
@@ -46,13 +47,15 @@ namespace L_DataAccess.Functions.Specific
             }
         }
 
+
+        // Get all Share Entries from one User
         public async Task<List<ShareDA>> GetSharesByUserId(string userId)
         {
             try
             {
                 using (var context = new DatabaseContext(DatabaseContext.Options.DatabaseOptions))
                 {
-                    List<ShareDA> Shares = await context.Shares.Where(t => t.UserId == userId).ToListAsync();
+                    List<ShareDA> Shares = await context.Share.Where(s => s.UserId == userId).ToListAsync();
 
                     return Shares;
                 }
