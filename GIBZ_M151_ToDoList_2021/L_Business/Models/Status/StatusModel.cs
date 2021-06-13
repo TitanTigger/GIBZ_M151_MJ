@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L_Business.Models.Status
 {
-    public class Status_ResultSet
+    public class StatusModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

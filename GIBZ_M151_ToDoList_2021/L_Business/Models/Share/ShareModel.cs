@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L_Business.Models.Share
 {
-    public class Share_ResultSet
+    public class ShareModel
     {
         public int Id { get; set; }
         public string UserId { get; set; }
