@@ -69,3 +69,77 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* CUTSOM CSS
+-------------------------------------------------- */
+
+.todoItems {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);
+}
+
+#Doing {
+    background-color: rgb(216,191,216);
+}
+#Done{
+    background-color: lightgreen;
+}
+#ToDo {
+    background-color: lightblue;
+}
+.delete{
+    position: absolute;
+    right: 0.7em;
+    bottom: 0.7em;
+}
+
+.card-body:hover{
+  background-color: rgba(128, 128, 128, 0.082);
+}
+
+.userDetails{
+  margin-left: 1em;
+}
+
+input{
+  min-width: 100%;
+}
+
+/* CUTSOM CSS
+-------------------------------------------------- */
+
+.todoItems {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0.3em 0.3em rgba(0, 0, 0, 0.1);
+}
+
+#Doing {
+  background-color: rgb(216,191,216);
+}
+#Done{
+  background-color: lightgreen;
+}
+#ToDo {
+  background-color: lightblue;
+}
+.delete{
+  position: absolute;
+  right: 0.7em;
+  bottom: 0.7em;
+}
+
+.card-body:hover{
+background-color: rgba(128, 128, 128, 0.082);
+}
+
+.userDetails{
+margin-left: 1em;
+}
+
+input{
+min-width: 100%;
+}

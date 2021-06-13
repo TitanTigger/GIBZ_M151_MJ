@@ -1,0 +1,50 @@
+﻿@model List<L_Business.Models.List.ListModel>
+
+
+<div class="container">
+    <div class="card m-1" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <div class="card-body">
+            <h5 class="card-title">
+                + Create
+            </h5>
+        </div>
+    </div>
+    @foreach (L_Business.Models.List.ListModel obj in Model)
+    {
+<div class="card m-1">
+    <div class="card-body">
+        <h5 class="card-title">
+            @obj.Name
+        </h5>
+        <button style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Delete", "List", new { id = obj.Id })'"><i class="far fa-trash-alt"></i></button>
+        <button style="background-color: transparent; border:none;" onclick="location.href='@Url.Action("Index", "ListDetail", new { id = obj.Id })'"><i class="fas fa-info-circle"></i></button>
+    </div>
+</div>}
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createModal">Create new list</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    @using (Html.BeginForm("Create", "List", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+        <div class="form-group">
+            <div>
+                Name: <input class="span2 col-md-2 form-control" id="format" name="name" type="text" required>
+                <br />
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

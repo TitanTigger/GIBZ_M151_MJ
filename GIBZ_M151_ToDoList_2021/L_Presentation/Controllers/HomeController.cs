@@ -6,20 +6,24 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using L_Presentation.Data;
 
 namespace L_Presentation.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ApplicationDbContext _context;
+
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+            //List<ListModel> test = _context.List.Where(u => u.name == "Sali").ToList();
             return View();
         }
 

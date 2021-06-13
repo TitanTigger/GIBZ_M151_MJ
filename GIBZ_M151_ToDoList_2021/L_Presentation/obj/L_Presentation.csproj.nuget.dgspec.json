@@ -1,20 +1,84 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxbr\\OneDrive\\Desktop\\M151\\Projects\\Git_M151_Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj": {}
+    "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxbr\\OneDrive\\Desktop\\M151\\Projects\\Git_M151_Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj": {
+    "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M151\\Projects\\Git_M151_Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
-        "projectName": "L_Presentation",
-        "projectPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M151\\Projects\\Git_M151_Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
-        "packagesPath": "C:\\Users\\maxbr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxbr\\OneDrive\\Desktop\\M151\\Projects\\Git_M151_Projekt\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\obj\\",
+        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj",
+        "projectName": "L_Business",
+        "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj",
+        "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
+        "outputPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maxbr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {
+                "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
+        "projectName": "L_DataAccess",
+        "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\L_DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
+        "outputPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +103,130 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
+        "projectName": "L_Presentation",
+        "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
+        "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
+        "outputPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj": {
+                "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -57,7 +245,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
