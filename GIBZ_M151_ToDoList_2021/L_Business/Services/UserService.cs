@@ -15,8 +15,8 @@ namespace L_Business.Services
 {
     public class UserService : IUserService
     {
-        private ShareService _shareService = new ShareService();
         private IUserOperations _userOperations = new UserOperations();
+    
 
         public async Task<IdentityUser> GetUserById(string id)
         {
@@ -53,10 +53,11 @@ namespace L_Business.Services
 
         public async Task<List<IdentityUser>> GetUsersToList(int listId)
         {
+            IShareService _shareService = new ShareService();
             List<IdentityUser> Users = new();
             try
             {
-                List<Share_ResultSet> Shares = (await _shareService.GetSharesByListId(listId)).result_set;
+                List<ShareModel> Shares = (await _shareService.GetSharesByListId(listId)).result_set;
                 Shares.ForEach(async share =>
                 {
                     Users.Add(await this.GetUserById(share.UserId));
