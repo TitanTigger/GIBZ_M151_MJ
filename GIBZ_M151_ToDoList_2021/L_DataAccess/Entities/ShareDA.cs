@@ -11,7 +11,7 @@ namespace L_DataAccess.Entities
         public int Id { get; set; }
         public string UserId { get; set; }
         public int ListId { get; set; }
-        public int RoleId { get; set; }
+        public int? RoleId { get; set; }
         
     }
 }
