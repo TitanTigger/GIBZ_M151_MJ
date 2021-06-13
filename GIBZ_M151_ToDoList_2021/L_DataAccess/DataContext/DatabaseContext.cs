@@ -1,5 +1,6 @@
 ﻿using L_DataAccess.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace L_DataAccess.DataContext
 {
-    public class DatabaseContext : DbContext
+    public class DatabaseContext : IdentityDbContext
     {
         public class OptionsBuild
         {
@@ -39,15 +40,14 @@ namespace L_DataAccess.DataContext
         //DatabaseContext CONSTRUCTOR:
         // Initializes a new instance of DbContext (DatabaseContext) but with specified OPTIONS.
         // But we will always simply just use the static OptionsBuild Options, as they are static and ready to go.
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
+        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)  { }
 
         //Our DbSets [Entities].
-        public DbSet<ListDA> Lists { get; set; }
-        public DbSet<RoleDA> Roles { get; set; }
-        public DbSet<ShareDA> Shares { get; set; }
-        public DbSet<StatusDA> Status { get; set; }
-        public DbSet<TaskDA> Tasks { get; set; }
-        public DbSet<IdentityUser> Users { get; set; }
+        public virtual DbSet<ListDA> List { get; set; }
+        public virtual DbSet<RoleDA> Role { get; set; }
+        public virtual DbSet<ShareDA> Share { get; set; }
+        public virtual DbSet<StatusDA> Status { get; set; }
+        public virtual DbSet<TaskDA> Task { get; set; }
 
 
 
