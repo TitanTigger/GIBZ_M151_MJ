@@ -10,11 +10,11 @@ namespace L_Business.Services.Interfaces
 {
     public interface IStatusService
     {
-        Task<Generic_ResultSet<Status_ResultSet>> AddStatus(string name);
-        Task<Generic_ResultSet<Status_ResultSet>> GetStatusById(int id);
-        Task<Generic_ResultSet<Status_ResultSet>> UpdateStatus(int id, string name);
-        Task<Generic_ResultSet<Status_ResultSet>> DeleteStatus(int id);
-        Task<Generic_ResultSet<List<Status_ResultSet>>> GetAllStatus();
+        Task<Generic_ResultSet<StatusModel>> AddStatus(string name);
+        Task<Generic_ResultSet<StatusModel>> GetStatusById(int id);
+        Task<Generic_ResultSet<StatusModel>> UpdateStatus(int id, string name);
+        Task<Generic_ResultSet<StatusModel>> DeleteStatus(int id);
+        Task<Generic_ResultSet<List<StatusModel>>> GetAllStatus();
 
     }
 }
