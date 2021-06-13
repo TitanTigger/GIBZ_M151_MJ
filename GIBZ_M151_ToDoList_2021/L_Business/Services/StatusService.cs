@@ -16,29 +16,29 @@ namespace L_Business.Services
     {
         private ICRUD _crud = new CRUD();
 
-        public async Task<Generic_ResultSet<Status_ResultSet>> AddStatus(string name)
+        public async Task<Generic_ResultSet<StatusModel>> AddStatus(string name)
         {
-            Generic_ResultSet<Status_ResultSet> result = new Generic_ResultSet<Status_ResultSet>();
+            Generic_ResultSet<StatusModel> result = new Generic_ResultSet<StatusModel>();
             try
             {
-                //INIT NEW DB ENTITY OF Status
+                // INIT NEW DB ENTITY OF Status
                 StatusDA Status = new StatusDA
                 {
                     Name = name
                 };
 
 
-                //ADD Status TO DB
+                // ADD Status TO DB
                 Status = await _crud.Create<StatusDA>(Status);
 
-                //MANUAL MAPPING OF RETURNED Applicant VALUES TO OUR Applicant_ResultSet
-                Status_ResultSet addedStatus = new Status_ResultSet
+                // MANUAL MAPPING OF RETURNED STATUS VALUES TO STATUSMODEL
+                StatusModel addedStatus = new StatusModel
                 {
                     Id = Status.Id,
                     Name = Status.Name,
                 };
 
-                //SET SUCCESSFUL RESULT VALUES
+                // SET SUCCESSFUL RESULT VALUES
                 result.userMessage = string.Format("Status added successfully", name);
                 result.internalMessage = "LOGIC.Services.StatusService:  AddStatus() method executed successfully.";
                 result.result_set = addedStatus;
@@ -46,18 +46,17 @@ namespace L_Business.Services
             }
             catch (Exception exception)
             {
-                //SET FAILED RESULT VALUES
+                // SET FAILED RESULT VALUES
                 result.exception = exception;
                 result.userMessage = "Failed to add Status. Please try again.";
-                result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: AddStatus(): {0}", exception.Message); ;
-                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: AddStatus(): {0}", exception.Message);
             }
             return result;
         }
 
-        public async Task<Generic_ResultSet<Status_ResultSet>> DeleteStatus(int id)
+        public async Task<Generic_ResultSet<StatusModel>> DeleteStatus(int id)
         {
-            Generic_ResultSet<Status_ResultSet> result = new Generic_ResultSet<Status_ResultSet>();
+            Generic_ResultSet<StatusModel> result = new Generic_ResultSet<StatusModel>();
             try
             {
                 await _crud.Delete<StatusDA>(id);
@@ -74,16 +73,17 @@ namespace L_Business.Services
             return result;
         }
 
-        public async Task<Generic_ResultSet<List<Status_ResultSet>>> GetAllStatus()
+        public async Task<Generic_ResultSet<List<StatusModel>>> GetAllStatus()
         {           
-            Generic_ResultSet<List<Status_ResultSet>> result = new Generic_ResultSet<List<Status_ResultSet>>();
+            Generic_ResultSet<List<StatusModel>> result = new Generic_ResultSet<List<StatusModel>>();
+            result.result_set = new List<StatusModel>();
             try
             {
                 //GET Status FROM DB
                 List<StatusDA> Status = await _crud.ReadAll<StatusDA>();
 
                 Status.ForEach(app => {
-                    result.result_set.Add(new Status_ResultSet
+                    result.result_set.Add(new StatusModel
                     {
                         Id = app.Id,
                         Name = app.Name                        
@@ -91,9 +91,8 @@ namespace L_Business.Services
                 });
 
                 //SET SUCCESSFUL RESULT VALUES
-                result.userMessage = string.Format("Status {0} was found successfully");
-                result.internalMessage = "LOGIC.Services.StatusService: GetStatusById() method executed successfully.";
-                result.result_set = result.result_set;
+                result.userMessage = "Status {0} was found successfully";
+                result.internalMessage = "LOGIC.Services.StatusService: GetAllStatus() method executed successfully.";
                 result.success = true;
             }
             catch (Exception exception)
@@ -101,30 +100,29 @@ namespace L_Business.Services
                 //SET FAILED RESULT VALUES
                 result.exception = exception;
                 result.userMessage = "Failed to find Status.";
-                result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: GetStatusById(): {0}", exception.Message);
-                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
+                result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: GetAllStatus(): {0}", exception.Message);
             }
             return result;
             
         }
 
-        public async Task<Generic_ResultSet<Status_ResultSet>> GetStatusById(int id)
+        public async Task<Generic_ResultSet<StatusModel>> GetStatusById(int id)
         {
-            Generic_ResultSet<Status_ResultSet> result = new Generic_ResultSet<Status_ResultSet>();
+            Generic_ResultSet<StatusModel> result = new Generic_ResultSet<StatusModel>();
             try
             {
-                //GET Status FROM DB
+                // GET Status FROM DB
                 StatusDA Status = await _crud.Read<StatusDA>(id);
 
-                //MANUAL MAPPING OF RETURNED Applicant VALUES TO Status_ResultSet
-                Status_ResultSet returnedStatus = new Status_ResultSet
+                // MANUAL MAPPING OF RETURNED STATUS VALUES TO STATUSMODEL
+                StatusModel returnedStatus = new StatusModel
                 {
                     Id = Status.Id,
                     Name = Status.Name
 
                 };
 
-                //SET SUCCESSFUL RESULT VALUES
+                // SET SUCCESSFUL RESULT VALUES
                 result.userMessage = string.Format("Status {0} was found successfully", returnedStatus.Name);
                 result.internalMessage = "LOGIC.Services.StatusService: GetStatusById() method executed successfully.";
                 result.result_set = returnedStatus;
@@ -132,18 +130,17 @@ namespace L_Business.Services
             }
             catch (Exception exception)
             {
-                //SET FAILED RESULT VALUES
+                // SET FAILED RESULT VALUES
                 result.exception = exception;
                 result.userMessage = "Failed to find Status.";
                 result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: GetStatusById(): {0}", exception.Message);
-                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
             }
             return result;
         }
 
-        public async Task<Generic_ResultSet<Status_ResultSet>> UpdateStatus(int id, string name)
+        public async Task<Generic_ResultSet<StatusModel>> UpdateStatus(int id, string name)
         {
-            Generic_ResultSet<Status_ResultSet> result = new Generic_ResultSet<Status_ResultSet>();
+            Generic_ResultSet<StatusModel> result = new Generic_ResultSet<StatusModel>();
             try
             {
                 StatusDA Status = new StatusDA
@@ -151,18 +148,18 @@ namespace L_Business.Services
                     Id = id,
                     Name = name
                 };
-                //UPDATE Applicant FROM DB
+                // UPDATE STATUS FROM DB
                 Status = await _crud.Update<StatusDA>(Status, id);
 
-                //MANUAL MAPPING OF UPDATED Applicant VALUES TO OUR Applicant_ResultSet
-                Status_ResultSet updatedStatus = new Status_ResultSet
+                // MANUAL MAPPING OF UPDATED STATUS VALUES TO OUR STATUSMODEL
+                StatusModel updatedStatus = new StatusModel
                 {
                     Id = Status.Id,
                     Name = Status.Name,
 
                 };
 
-                //SET SUCCESSFUL RESULT VALUES
+                // SET SUCCESSFUL RESULT VALUES
                 result.userMessage = string.Format("Status {0} was updated successfully", updatedStatus.Name);
                 result.internalMessage = "LOGIC.Services.StatusService: UpdateStatus() method executed successfully.";
                 result.result_set = updatedStatus;
@@ -170,11 +167,10 @@ namespace L_Business.Services
             }
             catch (Exception exception)
             {
-                //SET FAILED RESULT VALUES
+                // SET FAILED RESULT VALUES
                 result.exception = exception;
                 result.userMessage = "Failed to update Status.";
                 result.internalMessage = string.Format("ERROR: LOGIC.Services.StatusService: UpdateStatus(): {0}", exception.Message);
-                //Success by default is set to false & its always the last value we set in the try block, so we should never need to set it in the catch block.
             }
             return result;
         }
