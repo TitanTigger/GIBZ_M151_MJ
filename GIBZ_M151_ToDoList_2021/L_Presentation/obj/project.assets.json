@@ -8473,19 +8473,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Max\\.nuget\\packages\\": {}
+    "C:\\Users\\Joshua\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Max\\Downloads\\GIBZ_M151_MJ-main\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
+      "projectUniqueName": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
       "projectName": "L_Presentation",
-      "projectPath": "C:\\Users\\Max\\Downloads\\GIBZ_M151_MJ-main\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
-      "packagesPath": "C:\\Users\\Max\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Max\\Downloads\\GIBZ_M151_MJ-main\\GIBZ_M151_ToDoList_2021\\L_Presentation\\obj\\",
+      "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\L_Presentation.csproj",
+      "packagesPath": "C:\\Users\\Joshua\\.nuget\\packages\\",
+      "outputPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Max\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Joshua\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8499,8 +8499,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Max\\Downloads\\GIBZ_M151_MJ-main\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj": {
-              "projectPath": "C:\\Users\\Max\\Downloads\\GIBZ_M151_MJ-main\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj"
+            "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj": {
+              "projectPath": "C:\\GIBZ\\M151\\Projekt_Neu-Neu\\GIBZ_M151_MJ\\GIBZ_M151_ToDoList_2021\\L_Business\\L_Business.csproj"
             }
           }
         }
@@ -8556,7 +8556,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
