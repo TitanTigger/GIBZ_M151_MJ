@@ -11,12 +11,15 @@ using Microsoft.AspNetCore.Identity;
 using L_Business.Services;
 using L_Business.Services.Interfaces;
 using L_Business.Models.List;
+using Microsoft.AspNetCore.Authorization;
 
 namespace L_Presentation.Controllers {
     public class ListController : Controller
     {
         private IListService _listService = new ListService();
+
         
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             // Get all lists of current user

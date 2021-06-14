@@ -23,7 +23,6 @@ namespace L_Presentation.Controllers
 
         public IActionResult Index()
         {
-            //List<ListModel> test = _context.List.Where(u => u.name == "Sali").ToList();
             return View();
         }
 

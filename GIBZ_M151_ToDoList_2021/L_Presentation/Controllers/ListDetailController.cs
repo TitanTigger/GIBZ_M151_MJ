@@ -13,6 +13,7 @@ using L_Business.Services.Interfaces;
 using L_Business.Services;
 using L_Business.Models.List;
 using L_Business.Models.Task;
+using Microsoft.AspNetCore.Authorization;
 
 namespace L_Presentation.Controllers {
     public class ListDetailController : Controller
@@ -26,7 +27,8 @@ namespace L_Presentation.Controllers {
         {
             _context = context;
         }
-
+        
+        [Authorize]
         public async Task<IActionResult> Index(int id)
         {
             // Get list detail with tasks, users and statuses
